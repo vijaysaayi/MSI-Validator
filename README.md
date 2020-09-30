@@ -34,7 +34,7 @@ Current version - v1.0.0.0
    > **Valid Arguments for resource = keyvault, storage, sql** <br/>
    >
    > - msi-validator test-connection -r "keyvault" -e "https://<keyvault-name>.vault.azure.net/secrets/<secret-key>"
-   > - msi-validator.exe test-connection -r storage -e https://<storage-name>.blob.core.windows.net/webapp/<container-name>/<blob-path>
+   > - msi-validator.exe test-connection -r storage -e https://<storage-name>.blob.core.windows.net/<container-name>/<blob-path>
    > - msi-validator.exe test-connection -r sql -e "Data Source=<server-name>.database.windows.net;Initial Catalog=<database-name>;"
 
 ## Troubleshooting :
