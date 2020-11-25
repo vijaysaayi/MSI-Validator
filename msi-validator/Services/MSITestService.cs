@@ -23,8 +23,8 @@ namespace msi_validator.Services
         
         public MSITestService(IHTTPClientService http, ILogger<MSITestService> logger)
         {            
-            _url = Environment.GetEnvironmentVariable("MSI_ENDPOINT");
-            _secret = Environment.GetEnvironmentVariable("MSI_SECRET");
+            _url = Environment.GetEnvironmentVariable("IDENTITY_ENDPOINT");
+            _secret = Environment.GetEnvironmentVariable("IDENTITY_HEADER");
             _client = new HttpClient();
             _endpoint = new Endpoints();
 
