@@ -30,7 +30,11 @@ namespace msi_validator.Controller
         public async Task GetToken(
         [Option(LongName = "resource", ShortName = "r", 
         Description = "URL of the resource for which token should be issued ")]
-        string resource)
+        string resource,
+        [Option(LongName = "clientId", ShortName = "c",
+        Description = "Client Id of the User Assigned Identity ")]
+        string clientId
+        )
         {
             if (!_msi.IsMSIEnabled())
                 _logger.LogError("MSI is not enabled for the App Service");
@@ -40,7 +44,7 @@ namespace msi_validator.Controller
                 {
                     if(_msi.ValidateResource(resource))
                     {
-                        string response = await _msi.GetToken(resource);
+                        string response = await _msi.GetToken(resource, clientId);
                         _logger.LogInformation(response);
                     }
                     
@@ -66,7 +70,10 @@ namespace msi_validator.Controller
 
         [Option(LongName = "endpoint", ShortName = "e",
         Description = "Endpoint URL fow which we can test the connection")]
-        string endpoint
+        string endpoint,
+        [Option(LongName = "clientId", ShortName = "c",
+        Description = "Client Id of the User Assigned Identity ")]
+        string clientId
         )
         {
             if (!_msi.IsMSIEnabled())
@@ -77,7 +84,7 @@ namespace msi_validator.Controller
                 {
                     if (_msi.ValidateResource(resource))
                     {
-                        string response = await _msi.TestConnection(resource, endpoint);
+                        string response = await _msi.TestConnection(resource, endpoint, clientId);
                         Console.WriteLine(response);
                     }
                         

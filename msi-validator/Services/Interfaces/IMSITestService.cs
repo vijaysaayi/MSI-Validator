@@ -11,8 +11,8 @@ namespace msi_validator.Services.Interfaces
 
         bool ValidateResource(string resource);
 
-        Task<string> GetToken(string resource);
+        Task<string> GetToken(string resource, string clientId);
 
-        Task<string> TestConnection(string resource, string endpoint);
+        Task<string> TestConnection(string resource, string endpoint, string clientId);
     }
 }

@@ -42,7 +42,7 @@ namespace msi_validator
             AppRunner<MSITestController> appRunner = new AppRunner<MSITestController>();
             appRunner.UseMicrosoftDependencyInjection(serviceProvider);
 
-            string version = "v1.0.0.0";
+            string version = "v2.0.0.0";
             Console.WriteLine($"Running MSI Validator {version}");
 
             return appRunner.Run(args);
