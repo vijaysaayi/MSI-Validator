@@ -22,6 +22,8 @@ namespace msi_validator.Services
 
         async Task<string> IHTTPClientService.GetRequestWithHeaders(string url , Dictionary<string,string> headers)
         {
+            _httpClient.DefaultRequestHeaders.Clear();
+
             foreach (KeyValuePair<string, string> header in headers)
             {
                 _httpClient.DefaultRequestHeaders.Add(header.Key, header.Value);

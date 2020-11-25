@@ -52,7 +52,7 @@ namespace msi_validator.Services
             return resource;
         }
 
-        private async Task<string> GetToken(string resource)
+        private async Task<string> GetToken(string resource, string clientId)
         {
             resource = ValidateResource(resource);
 
@@ -63,20 +63,23 @@ namespace msi_validator.Services
 
             string baseUrl = _endpoint.GetUrl(resource);
             string url = $"{_url}?resource={baseUrl}&api-version=2019-08-01";
+            if (!string.IsNullOrEmpty(clientId))
+                url += $"&client_id={clientId}";
+
             _logger.LogInformation($"Requesting Azure AD for an access token for the resource : {baseUrl}");
             string response = await _http.GetRequestWithHeaders(url, headers);
 
             return (response);
         }
-         async Task<string> IMSITestService.GetToken(string resource)
+         async Task<string> IMSITestService.GetToken(string resource, string clientId)
         {
 
-            string response = await GetToken(resource);
+            string response = await GetToken(resource, clientId);
             return response;
             
         }
 
-        async Task<string> IMSITestService.TestConnection(string resource, string endpoint)
+        async Task<string> IMSITestService.TestConnection(string resource, string endpoint, string clientId)
         {
             resource = ValidateResource(resource);
 
@@ -86,7 +89,7 @@ namespace msi_validator.Services
             }
             else
             {
-                string responseWithToken = await GetToken(resource);
+                string responseWithToken = await GetToken(resource, clientId);
                 dynamic json = JsonConvert.DeserializeObject(responseWithToken);
                 string accessToken = json.access_token.ToString();
 
