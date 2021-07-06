@@ -43,7 +43,7 @@ Current version - v1.0.0.0
 2. Navigate to Kudu Console (https://<webapp-name>.scm.azurewebsites.net) > Environment Section and search for MSI (Ctrl + F) <br/>
    ![](https://github.com/vijaysaayi/MSI-Validator/blob/master/Images/02%20-%20check%20env%20variables.png)
    The Environmental Variables **MSI_ENDPOINT** and **MSI_SECRET** would have been set automatically.
-3. Run the command **"msi-validator get-token -r <resource>"** and check if a token is being returned. <br/>
+3. Run the command **"msi-validator get-token -r < resource >"** and check if a token is being returned. <br/>
    ![](https://github.com/vijaysaayi/MSI-Validator/blob/master/Images/03%20-%20inspect%20the%20token.png) <br/>
    An access token should be returned.
    Otherwise, it indicates that MSI service has issues reaching out to Azure Active Directory to fetch a token.
@@ -54,7 +54,7 @@ Current version - v1.0.0.0
    > Are there any User Defined Routes on the subnet to which the App Service is integrated ?
    > If Yes , is the device to which the traffic is force tunneled, blocking any Azure Active Directory Dependency ?
    > - Do you still face the issue if Managed Identity is disabled and enabled again ?
-4. Run the command **"msi-validator test-connection -r <resource> -e "<endpoint>" "** and check if data is returned from the resource or inspect the error message.
+4. Run the command **"msi-validator test-connection -r < resource > -e < endpoint > "** and check if data is returned from the resource or inspect the error message.
    
    #### KeyVault <br/>
    From the below error message, we see that the App Service doesn’t have necessary permissions to access the KeyVault. <br/>
