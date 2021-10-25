@@ -130,7 +130,9 @@ Current version - v1.0.0.0
     You could refer to our documentation regarding this at [Tutorial: Access data with managed identity - Azure App Service | Microsoft Docs](https://docs.microsoft.com/en-us/azure/app-service/app-service-web-tutorial-connect-msi#grant-permissions-to-managed-identity)
     
 ## Download Link :
-https://techcommunity.microsoft.com/t5/apps-on-azure/managed-identity-for-azure-app-services/ba-p/1711597
+- **Option 1:** https://techcommunity.microsoft.com/t5/apps-on-azure/managed-identity-for-azure-app-services/ba-p/1711597
+- **Option 2:** [Click here]()
+   
     
   
     
