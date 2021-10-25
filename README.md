@@ -2,7 +2,7 @@
 Azure App Services supports an interesting feature called **Manage Identity** from Azure Active Directory. <br/>
 This allows your App Services to easily connect to Azure Resources such as Azure KeyVault, Azure Storage, Azure SQL . <br/>
 The complete list of resources that support this feature are available in the following document:<br/>
-[Azure Services that support managed identities - Azure AD | Microsoft Docs](https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/services-support-managed-identities)<br/>
+[Azure Services that support managed identities - Azure AD | Microsoft Docs](https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/services-support-managed-identities)<br/> 
 
 You could refer to our documentation [here](https://docs.microsoft.com/en-us/azure/app-service/overview-managed-identity?tabs=dotnet) for more details on this feature . <br/>
 
